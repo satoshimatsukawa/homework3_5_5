@@ -1,15 +1,11 @@
 import streamlit as st # フロントエンドを扱うstreamlitの機能をインポート
 from openai import OpenAI # openAIのchatGPTのAIを活用するための機能をインポート
 
-
 # アクセスの為のキーをos.environ["OPENAI_API_KEY"]に代入し、設定
 
 import os # OSが持つ環境変数OPENAI_API_KEYにAPIを入力するためにosにアクセスするためのライブラリをインポート
 # ここにご自身のAPIキーを入力してください！
-os.environ["OPENAI_API_KEY"] = "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"
-
-# openAIの機能をclientに代入
-client = OpenAI()
+client = OpenAI(api_key=st.secrets["OPENAI_API_KEY"])
 
 content_kind_of =[
     "中立的で客観的な文章",
